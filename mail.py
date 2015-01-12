@@ -20,7 +20,7 @@ def sendEmail(msgTo, content, type):
     msg.attach(html_att)
     msg.attach(att)
     try:
-        smtp = smtplib.SMTP('')
+        smtp = smtplib.SMTP()
         smtp.connect('', 25)
         smtp.login(msg['From'], 'passwd')
         smtp.sendmail(msg['From'], msg['To'].split(','), msg.as_string())
